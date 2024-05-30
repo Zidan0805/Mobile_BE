@@ -1,6 +1,5 @@
 const express = require('express')
 const { getReports, getReportById, createReport, updateReport, deleteReport } = require('../controllers/reports.controllers')
-
 const route = express.Router()
 
 route.get('/', getReports)

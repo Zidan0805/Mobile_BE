@@ -1,13 +1,19 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const reportSchema = new Schema({
+const reportSchema = new mongoose.Schema({
     jumlah: Number,
     stokMasuk: Number,
     stokKeluar: Number,
-    productID: { type: Schema.Types.ObjectId, ref: 'Barang' },
-    suplierID: { type: Schema.Types.ObjectId, ref: 'Suplier' },
-    distributorID: { type: Schema.Types.ObjectId, ref: 'Distributor' }
-}, { timestamps: true });
+    productID: { type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Product' },
+    suplierID: { type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Suplier' },
+    distributorID: { type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Distributor' }
+}, { 
+    timestamps: true
+ });
 
-module.exports = mongoose.model('Reports', reportSchema);
+ const Reports = mongoose.model('Reports', reportSchema);
+ module.exports = Reports
+ 

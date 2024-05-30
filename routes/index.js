@@ -6,6 +6,7 @@ const suplierRoute = require('./suplier.routes')
 const productRoute = require('./product.routes')
 const distibutorRoute = require('./distributor.routes')
 const reportRoute = require('./reports.route')
+
 route.get('/', (req, res) => {
     res.json("express mongoose halo")
 })
